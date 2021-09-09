@@ -1,0 +1,129 @@
+.header-band-initial{
+  top:0;
+  width:100%;
+  height:auto;
+  background:#000;
+  padding:10px 10px;
+  position:fixed;
+  z-index:1000;
+}
+
+.container-nav-item{
+  display:inline-block;
+}
+
+.span-right{
+  float: right;
+}
+
+.item-nav{
+  font-size:16px;
+  font-family:'Poppins', sans-serif;
+  margin-bottom:0;
+  color:#fff;
+}
+
+.icon-item-left{
+  color:#EDE031;
+  margin-right:10px;
+}
+
+.img-logo{
+  width:28px;
+  height:28px;
+  margin-right:10px;
+}
+
+.header-container{
+  position:fixed;
+  z-index:1000;
+  background:#212529;
+  width:100%;
+  padding:15px;
+  top:45px;
+}
+
+.img-logo-header-container{
+  width:50%;
+}
+
+.search-header-container{
+  font-family: 'Poppins', sans-serif;
+  width:100%;
+  padding:6.5px 15px;
+  border-radius:6px;
+  border:none;
+  outline:none;
+  color:#675D5D;
+}
+
+.container-icons{
+  display:flex;
+  justify-content:flex-end;
+  align-items: center;
+  padding-right:60px;
+}
+
+.icon-likes-favorites{
+  color:#fff;
+  font-size:20px;
+}
+
+.icon-cart-header{
+  color:#fff;
+  font-size:20px;
+  margin-left:40px;
+}
+
+.container-icon{
+  position:relative;
+}
+
+.mark-contain{
+  width:10px;
+  height:10px;
+  background:#EDE031;
+  position:absolute;
+  right:0;
+  border-radius:100px;
+  margin-top:-3px;
+  margin-right:-3px;
+}
+
+.span-container-input{
+  position:relative;
+}
+
+.card-search-utilities{
+  width:96%;
+  height:auto;
+  position:absolute;
+  background:#fff;
+  margin-top:10px;
+  border-radius:6px;
+  box-shadow:0px 15px 20px rgba(17,23,21,.16);
+  visibility:hidden;
+  opacity:0;
+  transition:.5s;
+  padding:25px;
+}
+
+.search-header-container:focus ~ .card-search-utilities{
+  visibility:visible;
+  opacity:1;
+  transition:.5s;
+  position:absolute;
+}
+
+.title-card-search-utilities{
+  font-size:25px;
+  margin-bottom:15px;
+  cursor: pointer;
+}
+
+.item-card-search-utilities{
+  font-size:18px;
+  opacity:.55;
+  margin-bottom:15px;
+  cursor: pointer;
+}

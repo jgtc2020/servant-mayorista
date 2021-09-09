@@ -1,0 +1,260 @@
+*{
+    scroll-behavior: smooth;
+  }
+  body::-webkit-scrollbar{
+  /* solo oculta su visualizacion */
+  display: none;
+}
+a:hover, a:visited, a:link, a:active{
+      color:none;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  a:link:hover{
+    text-decoration: none;
+  }
+   button:focus{
+     outline:inherit !important;
+   }
+   input:focus{
+     outline:inherit !important;
+   }
+   body{
+     background:#eee !important;
+     font-family:'Poppins', sans-serif !important;
+   }
+
+.banner-home-container{
+  margin-top:100px;
+}
+
+.container-instructions{
+  padding:23px;
+  margin-top:75px;
+  background:#fff;
+  box-shadow:1px 25px 25px rgba(17,23,21,.16);
+  border-radius:6px;
+}
+
+.card-container-instructions{
+  display:flex;
+  align-items: center;
+}
+
+.container-text, .container-icon{
+  display:inline-block;
+}
+
+.container-icon{
+  margin-right:17px;
+}
+
+.icon-instructions{
+  color:#675D5D;
+  border:1px solid #707070;
+  padding:14px;
+  border-radius:300px;
+}
+
+.text-initial-instruction {
+  font-size:17px;
+  color:#675D5D;
+}
+
+.text-initial-description-instruction{
+  font-size:12px;
+  color:#675D5D;
+  opacity:.7;
+}
+
+
+.container-title-section-1{
+  margin:75px auto;
+}
+
+.title-section-1-sections{
+  color:#675D5D;
+  opacity:.6;
+  font-size:25px;
+}
+
+.container-slide{
+  margin:0px 100px;
+}
+
+.swiper-container{
+  margin:0px 115px 75px;
+  padding:0px 0px 70px;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    background: #fff;
+    box-shadow: 1px 15px 15px rgba(17,23,21,.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    transition: .5s;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 25px!important;
+    opacity:.59;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover{
+  transform:scale(.9);
+  transition:.5s;
+  background:#EDE031;
+  color:#fff !important;
+}
+
+.swiper-pagination-bullet-active{
+  background:#EDE031 !important;
+}
+
+.card-swiper-slide{
+  background:#fff;
+  padding:20px 30px;
+  box-shadow:1px 25px 25px rgba(17,23,21,.16);
+  border-radius:6px;
+}
+
+.container-item-card-swiper, .container-img-card-swiper{
+  display:inline-block;
+}
+
+.img-card-swiper{
+  width:100%;
+}
+.card-text{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-main-card-swiper{
+  font-size:calc(.4em + 2vw);
+  color:#675D5D;
+}
+
+.text-description-card-swiper{
+  font-size:calc(.5em + .8vw);
+  color:#675D5D;
+  opacity:.55;
+}
+
+.btn-card-swiper{
+  background:#EDE031;
+  border:none;
+  font-size:15px;
+  padding:6px 60px;
+  box-shadow:1px 25px 25px rgba(17,23,21,.16);
+  border-radius:6px;
+  transition:.7s;
+  border:1px solid #EDE031;
+}
+
+.btn-card-swiper:hover{
+  background:#fff;
+  border:1px solid #EDE031;
+  transition:.7s;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+  top:35%;
+  right:5;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  top:35%;
+  left:2;
+}
+
+
+.banner-section-2-adds{
+  margin-bottom:75px;
+}
+
+
+.container-title-section-3{
+  margin:75px auto;
+}
+
+.title-section-3-sections{
+  color:#675D5D;
+  opacity:.6;
+  font-size:25px;
+}
+
+.container-section-4{
+  margin-bottom:125px;
+}
+
+.card-section-4{
+  background:#fff;
+  padding:30px 20px;
+  box-shadow:1px 25px 25px rgba(17,23,21,.16);
+  border-radius:6px;
+}
+
+.container-text-section-4{
+  text-align: center;
+}
+
+.title-primary-price{
+  margin-top:10px;
+  font-size:25px;
+  color:#675D5D;
+}
+
+.text-description-product{
+  color:#675D5D;
+  opacity:.70;
+}
+
+.btn-buy-product{
+  width:100%;
+  background:#EDE031;
+  border:none;
+  border-radius:6px;
+  padding:7px 0px;
+  box-shadow:1px 25px 25px rgba(17,23,21,.16);
+  transition:.7s;
+  border:1px solid #EDE031;
+}
+
+.btn-buy-product:hover{
+  background:#fff;
+  border:1px solid #EDE031;
+  transition:.7s;
+}
+
+.img{
+  width:100%;
+}
+
+.card-section-4{
+  height:95% !important;
+}
+
+
+.title-primary-price{
+  font-size:18px !important;
+  opacity:.6;
+  margin-bottom:20px;
+}
+
+.middle{
+  font-size:25px;
+  color:#000;
+  opacity:1 !important;
+  margin-top:10px;
+  margin-bottom:5px !important;
+}
+
+@media screen and (min-width:0px) and (max-width:1000px){
+  .swiper-container{
+    margin:0px 20px 75px;
+  }
+}

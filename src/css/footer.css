@@ -1,0 +1,26 @@
+.container-footer{
+  padding:75px 0px;
+  background:#212529;
+}
+
+.img-footer{
+  width:100%;
+}
+
+.title-footer-med-card, .text-footer-med-card{
+  font-family:'Poppins', sans-serif;
+  color:#fff;
+}
+
+.title-footer-end-card, .text-footer-end-card{
+  font-family:'Poppins', sans-serif;
+  color:#fff;
+}
+
+.title-footer-med-card, .title-footer-end-card{
+  font-size:calc(.4em + 1.6vw);
+}
+
+.text-footer-med-card, .text-footer-end-card{
+opacity:.80; 
+}
