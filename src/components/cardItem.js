@@ -5,19 +5,21 @@ import { useHistory } from 'react-router-dom';
 
 const CardItem = ({ item })=>{
 const history = useHistory();
-const handleDescription = id => history.push(`/productos/auriculares/descripcion/${id}`);
+const handleDescription = id => history.push(`/productos/descripcion/${id}`);
 
   return(
     <React.Fragment>
-    <div data-aos='fade-up' className="col-6 col-sm-6 col-md-4 col-lg-3">
       <div className="card-section-4">
        <div className="container-text-section-4">
+       <i class="icon-favorites-card-item-product btn-favorites far fa-heart"></i>
          <img className="img" src={item.image} />
-         <p className="text-description-product middle">{item.price}</p>
+         <div className="container-text-off-card-item">
+            <p className="text-description-product middle">{item.price}</p>
+            <p className="text-description-off">10% OFF</p>
+         </div>
          <h1 className="title-primary-price price">{item.name}</h1>
-         <button className="btn-buy-product" type="button" onClick={()=> handleDescription(item.name)} name="button">Comprar</button>
+         <button className="btn-buy-product" type="button" onClick={()=> handleDescription(item.name)} name="button">Ver detalles</button>
        </div>
-      </div>
       </div>
     </React.Fragment>
   )

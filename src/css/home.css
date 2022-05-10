@@ -84,8 +84,12 @@ a:hover, a:visited, a:link, a:active{
 }
 
 .swiper-container{
-  margin:0px 115px 75px;
+  margin:0px 115px;
   padding:0px 0px 70px;
+}
+
+.separation{
+  margin-bottom:75px;
 }
 
 .swiper-button-prev, .swiper-button-next{
@@ -192,6 +196,7 @@ a:hover, a:visited, a:link, a:active{
 }
 
 .card-section-4{
+  position:relative;
   background:#fff;
   padding:30px 20px;
   box-shadow:1px 25px 25px rgba(17,23,21,.16);
@@ -238,7 +243,6 @@ a:hover, a:visited, a:link, a:active{
   height:95% !important;
 }
 
-
 .title-primary-price{
   font-size:18px !important;
   opacity:.6;
@@ -246,11 +250,33 @@ a:hover, a:visited, a:link, a:active{
 }
 
 .middle{
+  display:inline-block;
   font-size:25px;
   color:#000;
   opacity:1 !important;
   margin-top:10px;
   margin-bottom:5px !important;
+}
+
+.text-description-off{
+  display:inline-block;
+  margin-left: 10px;
+  font-family:'Poppins', sans-serif;
+  color:#00a650;
+  font-weight:bold;
+}
+
+.icon-favorites-card-item-product{
+  position:absolute;
+  right:0;
+  top:0;
+  margin:13px;
+  color:#675D5D;
+  background:#fff;
+  box-shadow:1px 10px 15px rgba(17,23,21,.22);
+  padding:10px;
+  border-radius:200px;
+  transition:.5s;
 }
 
 @media screen and (min-width:0px) and (max-width:1000px){

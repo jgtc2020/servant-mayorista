@@ -10,7 +10,7 @@ const Description = ({ item=[] })=>{
   console.log(items);
 
   const handleHistory = ()=>{
-    history.push("/productos/celulares");
+    history.goBack();
   };
 
   return(

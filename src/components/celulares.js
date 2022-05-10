@@ -3,19 +3,7 @@ import ReactDOM from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import CardItem from '../components/cardItem.js';
 
-const Celulares = ({ handleCart })=>{
-
-  const url ='http://cruce-app.herokuapp.com/products';
-  const [todos, setTodos] = useState();
-  const fetchApi = async ()=>{
-    const response = await fetch(url);
-    const responseJSON = await response.json();
-    setTodos(responseJSON);
-  };
-
-  useEffect(()=>{
-    fetchApi();
-  }, [])
+const Celulares = ({ handleCart, todos })=>{
 
   return(
     <React.Fragment>
@@ -25,9 +13,17 @@ const Celulares = ({ handleCart })=>{
     animate={{opacity: 1}}>
     <div className="container">
       <div className="row">
-      {!todos ? 'Cargando...' :
-              todos.map( (item,index)=>{
-              return <CardItem key={item.id} item={item}/>
+      {todos.map( (item,index)=>{
+              return (
+                <div className="col-6 col-sm-6 col-md-4 col-lg-3 c">
+                <motion.div
+                initial={{opacity: 0}}
+                exit={{opacity: 0}}
+                animate={{opacity: 1}}>
+                <CardItem key={item.id} item={item}/>
+                </motion.div>
+                </div>
+              )
         })
       }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import '../css/header.css';
 import {
@@ -10,13 +10,14 @@ import {
 } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
-const Header = ({ handleAppear, handleCart })=>{
+const Header = ({ handleAppear, handleCart, handleData })=>{
 
-const [data, setData] = useState('');
+const [data, setData] = useState("");
+const [busqueda, setBusqueda] = useState("");
 
 
-const handleData = (e)=>{
-  setData(e.target.value);
+const handleChange = (e)=>{
+  setBusqueda(e.target.value);
 };
 
 const history = useHistory();

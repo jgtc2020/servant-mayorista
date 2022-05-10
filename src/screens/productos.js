@@ -20,6 +20,21 @@ import {
 
 const Productos = ()=>{
 
+
+  const url ='http://cruce-app.herokuapp.com/products';
+  const [todos, setTodos] = useState([]);
+  const fetchApi = async ()=>{
+    const response = await fetch(url);
+    const responseJSON = await response.json();
+    setTodos(responseJSON);
+  };
+
+
+  useEffect(()=>{
+    fetchApi();
+  }, [])
+
+
   useEffect(() =>{
       Aos.init({duration: 2000});
     }, []);
@@ -34,6 +49,17 @@ const handleCartClose = ()=>{
   setCart(false);
 };
 
+
+
+const handleData = (terminoBusqueda)=>{
+  var resultadoBusqueda = todos.filter((elemento)=>{
+    if (elemento.name.toString().includes(terminoBusqueda)) {
+      return elemento;
+    }
+  })
+  setTodos(resultadoBusqueda)
+};
+
   return(
     <React.Fragment>
     <motion.div
@@ -41,7 +67,7 @@ const handleCartClose = ()=>{
     exit={{opacity: 0}}
     animate={{opacity: 1}}>
 
-    <Header handleCart={handleCart} />
+    <Header handleData={handleData} todos={todos} handleCart={handleCart} />
 
     <div className={cart ? 'active-modal-cart-container' : 'modal-cart-container'}>
       <div className="container-items-header-cart">
@@ -79,13 +105,13 @@ const handleCartClose = ()=>{
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={require('../img/img.png').default} className="d-block w-100" alt="..." />
+            <img src="http://servant-argentina.herokuapp.com/img/banner3.png" className="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item">
-            <img src={require('../img/img2.png').default} className="d-block w-100" alt="..." />
+            <img src="http://servant-argentina.herokuapp.com/img/banner1.png" className="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item">
-            <img src={require('../img/img.png').default} className="d-block w-100" alt="..." />
+            <img src="http://servant-argentina.herokuapp.com/img/banner4.png" className="d-block w-100" alt="..." />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -115,16 +141,16 @@ const handleCartClose = ()=>{
         </div>
         <div className="col-md-9">
         <Route path="/productos/celulares" exact>
-           <Celulares handleCart={handleCart} />
+           <Celulares todos={todos} handleCart={handleCart} />
         </Route>
         <Route path="/productos/fundas" exact>
-           <Fundas />
+          <Celulares todos={todos} handleCart={handleCart} />
         </Route>
         <Route path="/productos/cargadores" exact>
-           <Cargadores />
+           <Cargadores todos={todos} />
         </Route>
         <Route path="/productos/auriculares" exact>
-           <Auriculares />
+           <Auriculares todos={todos} />
         </Route>
         </div>
       </div>

@@ -7,6 +7,7 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../components/header.js';
+import CardItem from '../components/cardItem.js';
 import Footer from '../components/footer.js';
 import Favorites from '../components/favorites.js';
 import '../css/home.css';
@@ -33,6 +34,19 @@ const Home = ()=>{
   };
 
 
+  const url ='http://cruce-app.herokuapp.com/products';
+  const [todos, setTodos] = useState([]);
+  const fetchApi = async ()=>{
+    const response = await fetch(url);
+    const responseJSON = await response.json();
+    setTodos(responseJSON);
+  };
+
+  useEffect(()=>{
+    fetchApi();
+  }, [])
+
+
   useEffect(() =>{
     Aos.init({duration: 2000});
   }, []);
@@ -55,13 +69,13 @@ const Home = ()=>{
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src={require('../img/img.png').default} className="d-block w-100" alt="..." />
+              <img src="http://servant-argentina.herokuapp.com/img/banner3.png" className="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src={require('../img/img2.png').default} className="d-block w-100" alt="..." />
+              <img src="http://servant-argentina.herokuapp.com/img/banner1.png" className="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src={require('../img/img.png').default} className="d-block w-100" alt="..." />
+              <img src="http://servant-argentina.herokuapp.com/img/banner4.png" className="d-block w-100" alt="..." />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -121,7 +135,7 @@ const Home = ()=>{
       </div>
 
 
-
+      <div className="separation">
       <Swiper
       autoplay={{delay:3000}}
       spaceBetween={50}
@@ -242,9 +256,10 @@ const Home = ()=>{
 
     </Swiper>
 
+      </div>
 
      <div className="banner-section-2-adds">
-      <img className="img-section-2-adds d-block w-100" src={require('../img/img2.png').default} alt="Sección publicidad seravnt argentina" />
+      <img className="img-section-2-adds d-block w-100" src="http://servant-argentina.herokuapp.com/img/banner5.png" alt="Sección publicidad seravnt argentina" />
      </div>
 
      <div className="container container-title-section-3">
@@ -257,7 +272,7 @@ const Home = ()=>{
      spaceBetween={50}
      slidesPerView={4}
      navigation={true}
-     pagination={{ clickable: true }}
+     pagination={false}
      onSwiper={(swiper) => console.log(swiper)}
      onSlideChange={() => console.log('slide change')}
      loop={true}
@@ -284,49 +299,22 @@ const Home = ()=>{
    >
 
    <div className="container-slide">
-     <SwiperSlide>
-     <div className="card-section-4">
-      <img className="img-card-swiper" src={require('../img/imgs.png').default} alt="imágen sección swiper" />
-      <div className="container-text-section-4">
-        <h1 className="title-primary-price">$23.999</h1>
-        <p className="text-description-product">Nokia Charcoal 2gb Ram 32gb</p>
-        <button className="btn-buy-product" type="button" name="button">Comprar</button>
-      </div>
-     </div>
-     </SwiperSlide>
 
-     <SwiperSlide>
-     <div className="card-section-4">
-      <img className="img-card-swiper" src={require('../img/imgs.png').default} alt="imágen sección swiper" />
-      <div className="container-text-section-4">
-        <h1 className="title-primary-price">$23.999</h1>
-        <p className="text-description-product">Nokia Charcoal 2gb Ram 32gb</p>
-        <button className="btn-buy-product" type="button" name="button">Comprar</button>
-      </div>
-     </div>
-     </SwiperSlide>
-
-     <SwiperSlide>
-     <div className="card-section-4">
-      <img className="img-card-swiper" src={require('../img/imgs.png').default} alt="imágen sección swiper" />
-      <div className="container-text-section-4">
-        <h1 className="title-primary-price">$23.999</h1>
-        <p className="text-description-product">Nokia Charcoal 2gb Ram 32gb</p>
-        <button className="btn-buy-product" type="button" name="button">Comprar</button>
-      </div>
-     </div>
-     </SwiperSlide>
-
-     <SwiperSlide>
-     <div className="card-section-4">
-      <img className="img-card-swiper" src={require('../img/imgs.png').default} alt="imágen sección swiper" />
-      <div className="container-text-section-4">
-        <h1 className="title-primary-price">$23.999</h1>
-        <p className="text-description-product">Nokia Charcoal 2gb Ram 32gb</p>
-        <button className="btn-buy-product" type="button" name="button">Comprar</button>
-      </div>
-     </div>
-     </SwiperSlide>
+   {todos.map( (item,index)=>{
+           return(
+             <SwiperSlide>
+              <div className="card-swiper-home">
+              <motion.div
+              initial={{opacity: 0}}
+              exit={{opacity: 0}}
+              animate={{opacity: 1}}>
+                <CardItem key={item.id} item={item}/>
+              </motion.div>
+              </div>
+             </SwiperSlide>
+           )
+     })
+   }
 
    </div>
 

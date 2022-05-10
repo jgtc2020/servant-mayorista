@@ -46,7 +46,7 @@ const App = () => {
        <Route path="/productos/auriculares" exact>
         <Productos />
        </Route>
-       <Route path="/productos/auriculares/descripcion/:id" exact>
+       <Route path="/productos/descripcion/:id" exact>
         <Description item={todos} />
        </Route>
      </Switch>
